@@ -2,5 +2,5 @@
 
 This is an CentOS based docker image used as base for other docker images in Stakater apps.
 
-You can download it from
-`docker pull stakater/centos-base-image`
+You can run it by
+`docker run -it stakater/centos-base-image /bin/bash`
