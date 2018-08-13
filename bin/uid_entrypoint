@@ -1,7 +1,12 @@
 #!/bin/sh
+# This shell script sets the user name to stakater if user id is set,
+# i.e. USER 1000 or any other id is set.
 if ! whoami &> /dev/null; then
   if [ -w /etc/passwd ]; then
     echo "${USER_NAME:-stakater}:x:$(id -u):0:${USER_NAME:-stakater} user:${HOME}:/sbin/nologin" >> /etc/passwd
   fi
 fi
+# This line behaves as a CMD listener
+# It basically takes all the extra command line arguments passed while running the image
+# and execs them as a command. 
 exec "$@"
